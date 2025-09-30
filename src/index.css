@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Monastery360 Design System - Warm earth tones with gold accents */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+@layer base {
+  :root {
+    /* Core monastery-inspired palette */
+    --background: 32 15% 96%;
+    --foreground: 25 25% 15%;
+
+    /* Card system */
+    --card: 35 20% 98%;
+    --card-foreground: 25 25% 15%;
+
+    /* Interactive elements */
+    --popover: 35 20% 98%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Primary - Deep monastery brown */
+    --primary: 25 35% 25%;
+    --primary-foreground: 45 85% 95%;
+
+    /* Secondary - Warm ochre */
+    --secondary: 35 25% 88%;
+    --secondary-foreground: 25 35% 25%;
+
+    /* Muted tones */
+    --muted: 35 20% 92%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - Sacred gold */
+    --accent: 45 85% 65%;
+    --accent-foreground: 25 35% 25%;
+
+    /* Status colors */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 45 85% 95%;
+
+    /* Form elements */
+    --border: 35 20% 85%;
+    --input: 35 20% 92%;
+    --ring: 45 85% 65%;
+
+    /* Layout */
+    --radius: 0.75rem;
+
+    /* Custom monastery colors */
+    --monastery-gold: 45 85% 65%;
+    --monastery-gold-light: 45 85% 75%;
+    --monastery-brown: 25 35% 25%;
+    --monastery-brown-light: 25 25% 35%;
+    --monastery-cream: 45 40% 94%;
+    --monastery-stone: 30 15% 75%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--monastery-brown)) 0%, hsl(var(--monastery-brown-light)) 50%, hsl(var(--monastery-gold)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--monastery-cream)) 100%);
+    --gradient-gold: linear-gradient(90deg, hsl(var(--monastery-gold)) 0%, hsl(var(--monastery-gold-light)) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--monastery-brown) / 0.15);
+    --shadow-medium: 0 8px 30px -8px hsl(var(--monastery-brown) / 0.25);
+    --shadow-strong: 0 16px 40px -12px hsl(var(--monastery-brown) / 0.35);
+    --shadow-gold: 0 0 30px hsl(var(--monastery-gold) / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode monastery theme */
+    --background: 20 30% 8%;
+    --foreground: 45 40% 92%;
+
+    --card: 20 25% 12%;
+    --card-foreground: 45 40% 92%;
+
+    --popover: 20 25% 12%;
+    --popover-foreground: 45 40% 92%;
+
+    --primary: 45 85% 65%;
+    --primary-foreground: 20 30% 8%;
+
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 45 40% 92%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 30 20% 65%;
+
+    --accent: 45 85% 65%;
+    --accent-foreground: 20 30% 8%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 45 40% 92%;
+
+    --border: 25 15% 25%;
+    --input: 25 15% 18%;
+    --ring: 45 85% 65%;
+
+    /* Dark monastery colors */
+    --monastery-gold: 45 85% 65%;
+    --monastery-gold-light: 45 85% 75%;
+    --monastery-brown: 45 40% 92%;
+    --monastery-brown-light: 45 30% 82%;
+    --monastery-cream: 20 25% 12%;
+    --monastery-stone: 30 15% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  /* Hero section styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  /* Shadow utilities */
+  .shadow-monastery {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-monastery-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-monastery-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Transition utilities */
+  .transition-monastery {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Monastery-specific utilities */
+  .text-monastery-gold {
+    color: hsl(var(--monastery-gold));
+  }
+
+  .text-monastery-brown {
+    color: hsl(var(--monastery-brown));
+  }
+
+  .bg-monastery-cream {
+    background-color: hsl(var(--monastery-cream));
+  }
+
+  .border-monastery-gold {
+    border-color: hsl(var(--monastery-gold));
+  }
+}
